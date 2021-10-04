@@ -1,0 +1,12 @@
+#frame {
+  position: absolute;
+}
+
+#content {
+  position: absolute;
+  visibility: hidden;
+}
+
+#adContainer {
+  pointer-events: none;
+}

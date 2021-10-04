@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Tic Tac Toe</title>
+    <link rel="icon" type="image/png" href="img/fav.png" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+
+<script type='text/javascript'>
+//NOTE: global is ad available
+  var isAdAvailable = true;
+
+  var script_tag = document.createElement('script');
+  script_tag.setAttribute('type', 'text/javascript');
+  script_tag.setAttribute('src', '//imasdk.googleapis.com/js/sdkloader/ima3.js');
+  script_tag.onerror = function() {
+    isAdAvailable = false;
+  }
+  document.getElementsByTagName('head')[0].appendChild(script_tag);
+</script>
+
+<script type="text/javascript" src="src/ads/ads.js"></script>
+<script type="text/javascript" src="src/utils/Constants.js" ></script>
+<script type="text/javascript" src="src/dialogs/WarningAdDialog.js" ></script>
+<script type="text/javascript" src="src/dialogs/ResultDialog.js" ></script>
+<script type="text/javascript" src="src/screens/GameScreen.js"></script>
+<script type="text/javascript" src="src/screens/StartScreen.js"></script>
+<script type="text/javascript" src="src/buttons/Button.js"></script>
+<script type="text/javascript" src="src/AppMgr.js"></script>
+
+<body>
+    <div id="frame" id="frame" ></div>
+
+        <div id="content">
+          <video id="contentElement">
+            <source src="https://storage.googleapis.com/gvabox/media/samples/stock.mp4"></source>
+          </video>
+        </div>
+
+        <div id="adContainer"></div>
+
+      <canvas id ="generalCanvas"></canvas>
+</body>
+
+<script type='text/javascript'>
+    //NOTE: global canvas context for draw
+    var ctx;
+
+    document.addEventListener("DOMContentLoaded", ready);
+
+    function ready() {
+       new AppMgr();
+    }
+</script>
+</html>
